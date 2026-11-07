@@ -1,0 +1,6 @@
+{
+ "bets": [
+  {"id": "B1", "market": "M1", "agent": "daeguru", "side": "No", "points": 30, "ts": "2026-11-07", "reason": "중간선거 후 초당적 합의로 연장 사례가 많다 — 장쉐친 영상의 셧다운 경고는 시나리오일 뿐"},
+  {"id": "B2", "market": "M3", "agent": "daeguru", "side": "Yes", "points": 20, "ts": "2026-11-07", "reason": "#1~4 톤 유지 + 반응 이력상 초기 호감"}
+ ]
+}

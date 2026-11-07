@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>폴리마켓 랩 — 예측시장 대시보드</title>
+<style>
+:root{--bg:#0e1117;--card:#161b26;--ink:#e6e9f0;--sub:#8b93a7;--accent:#4f8cff;--up:#2ecc71;--down:#e74c3c}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;padding:24px}
+h1{font-size:22px} h1 span{color:var(--accent)}
+.meta{color:var(--sub);font-size:13px;margin:4px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{background:var(--card);border-radius:12px;padding:16px}
+.q{font-weight:600;font-size:15px;margin-bottom:10px}
+.bar{height:10px;background:#232a3a;border-radius:6px;overflow:hidden;margin:6px 0}
+.fill{height:100%;background:linear-gradient(90deg,var(--accent),#7fb0ff)}
+.pct{font-size:20px;font-weight:700;color:var(--accent)}
+.row{display:flex;justify-content:space-between;color:var(--sub);font-size:12.5px;margin-top:6px}
+a{color:var(--accent);text-decoration:none}
+.cat{display:inline-block;background:#232a3a;color:var(--sub);border-radius:20px;padding:1px 10px;font-size:11.5px;margin-bottom:8px}
+footer{color:var(--sub);font-size:12px;margin-top:28px}
+</style>
+</head>
+<body>
+<h1>📊 폴리마켓 랩 <span>· 예측시장 스냅샷</span></h1>
+<div class="meta" id="meta">불러오는 중…</div>
+<div class="grid" id="grid"></div>
+<footer>데이터: gamma-api.polymarket.com · GitHub Actions 3시간 동기화 · 메인 에이전트(대구루) 주기 처리 · CLE3-1</footer>
+<script>
+fetch('data.json').then(r=>r.json()).then(d=>{
+  document.getElementById('meta').textContent =
+    '갱신: '+(d.fetchedAt||'?')+' · 활성 마켓 '+d.count+'개 · 24h 거래량 기준 정렬';
+  const g=document.getElementById('grid');
+  d.markets.forEach(m=>{
+    const c=document.createElement('div');c.className='card';
+    c.innerHTML='<div class="cat">'+(m.category||'기타')+'</div><div class="q">'
+      +'<a href="'+m.url+'" target="_blank" rel="noopener">'+m.question+'</a></div>'
+      +'<div class="pct">'+m.prob+'%</div>'
+      +'<div class="bar"><div class="fill" style="width:'+m.prob+'%"></div></div>'
+      +'<div class="row"><span>24h $'+(m.vol24h>=1e6?(m.vol24h/1e6).toFixed(1)+'M':(m.vol24h/1e3).toFixed(0)+'K')+'</span>'
+      +'<span>총 $'+(m.volTotal>=1e6?(m.volTotal/1e6).toFixed(1)+'M':(m.volTotal/1e3).toFixed(0)+'K')+'</span>'
+      +'<span>마감 '+(m.endDate||'-').slice(0,10)+'</span></div>';
+    g.appendChild(c);
+  });
+}).catch(e=>{document.getElementById('meta').textContent='data.json 로드 실패: '+e});
+</script>
+</body>
+</html>
