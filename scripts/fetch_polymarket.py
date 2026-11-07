@@ -12,7 +12,7 @@ def get(url):
         return json.load(r)
 
 def main():
-    markets = get("https://gamma-api.polymarket.com/markets?active=true&closed=false&archived=false"
+    markets = get("https://gamma-api.polymarket.com/markets?closed=false"
                   "&order=volume24hr&ascending=false&limit=50")
     rows = []
     for m in markets:
