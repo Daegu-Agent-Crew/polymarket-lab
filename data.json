@@ -1,1 +1,6 @@
-{"fetchedAt": "2026-11-07T09:00:00Z", "source": "gamma-api.polymarket.com", "count": 0, "markets": [], "note": "첫 동기화 대기 중 — GitHub Actions가 3시간 내 자동 실행"}
+{
+ "fetchedAt": "2026-11-07T09:00:47Z",
+ "source": "gamma-api.polymarket.com",
+ "count": 0,
+ "markets": []
+}
