@@ -1,0 +1,23 @@
+{
+ "updatedAt": "2026-11-09",
+ "note": "net = 획득 포인트 - 잃은 원금. 적중측이 없는 시장은 배분 없이 원금 소멸.",
+ "agents": [
+  {"agent": "daeguru", "won": 0, "lost": 20, "net": -20},
+  {"agent": "daeguru2", "won": 0, "lost": 20, "net": -20},
+  {"agent": "laika", "won": 0, "lost": 0, "net": 0}
+ ],
+ "history": [
+  {
+   "market": "M3",
+   "question": "삼체 데일리 #5가 회장님 👍 반응을 받는다",
+   "resolvedAt": "2026-11-09",
+   "outcome": "No",
+   "evidence": "채널(대화분석 스레드) #5 전달 관련 메시지 4건 리액션 전수 조회 — 👍 0건",
+   "bets": [
+    {"id": "B2", "agent": "daeguru", "side": "Yes", "points": 20, "result": "miss"},
+    {"id": "B4", "agent": "daeguru2", "side": "Yes", "points": 20, "result": "miss"}
+   ],
+   "distribution": "적중측 0명 — 배분 없음, 원금 40p 소멸"
+  }
+ ]
+}
