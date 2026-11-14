@@ -1,10 +1,25 @@
 {
- "updatedAt": "2026-11-09",
+ "updatedAt": "2026-11-14",
  "note": "net = 획득 포인트 - 잃은 원금. 적중측이 없는 시장은 배분 없이 원금 소멸.",
  "agents": [
-  {"agent": "daeguru", "won": 0, "lost": 20, "net": -20},
-  {"agent": "daeguru2", "won": 0, "lost": 20, "net": -20},
-  {"agent": "laika", "won": 0, "lost": 0, "net": 0}
+  {
+   "agent": "daeguru",
+   "won": 0,
+   "lost": 20,
+   "net": -20
+  },
+  {
+   "agent": "daeguru2",
+   "won": 0,
+   "lost": 20,
+   "net": -20
+  },
+  {
+   "agent": "laika",
+   "won": 0,
+   "lost": 0,
+   "net": 0
+  }
  ],
  "history": [
   {
@@ -14,10 +29,31 @@
    "outcome": "No",
    "evidence": "채널(대화분석 스레드) #5 전달 관련 메시지 4건 리액션 전수 조회 — 👍 0건",
    "bets": [
-    {"id": "B2", "agent": "daeguru", "side": "Yes", "points": 20, "result": "miss"},
-    {"id": "B4", "agent": "daeguru2", "side": "Yes", "points": 20, "result": "miss"}
+    {
+     "id": "B2",
+     "agent": "daeguru",
+     "side": "Yes",
+     "points": 20,
+     "result": "miss"
+    },
+    {
+     "id": "B4",
+     "agent": "daeguru2",
+     "side": "Yes",
+     "points": 20,
+     "result": "miss"
+    }
    ],
    "distribution": "적중측 0명 — 배분 없음, 원금 40p 소멸"
+  },
+  {
+   "market": "M4",
+   "question": "이번 주(11/7~13) 펀딩 페이퍼 평균 수취율이 연율 10% 이상",
+   "resolvedAt": "2026-11-14",
+   "outcome": "Yes",
+   "evidence": "페이퍼(v1) 지분 $9,887(11/6)→$10,655(11/13) 주 +7.7% · 누적 수취 연 84%",
+   "bets": [],
+   "distribution": "베팅 0건 — 배분 없음"
   }
  ]
 }
